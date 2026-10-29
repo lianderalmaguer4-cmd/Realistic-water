@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "realistic-water",
+	"version": "${version}",
+	"name": "Realistic Water Optimized (fork)",
+	"description": "Modified fork of Realistic Water by Skaffy (https://github.com/sskaffy/Realistic-Water). Not the original mod. Adds performance presets and better error logging.",
+	"authors": [
+		"Skaffy (original author)"
+	],
+	"contact": {
+		"homepage": "https://github.com/sskaffy/Realistic-Water",
+		"sources": "https://github.com/sskaffy/Realistic-Water"
+	},
+	"license": "Custom License",
+	"icon": "assets/realistic-water/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"me.skaffy.RealisticWater"
+		],
+		"client": [
+			"me.skaffy.client.RealisticWaterClient"
+		],
+		"sodium:config_api_user": [
+			"me.skaffy.client.compat.SodiumOptions"
+		]
+	},
+	"mixins": [
+		"realistic-water.mixins.json",
+		{
+			"config": "realistic-water.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~26.3",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
